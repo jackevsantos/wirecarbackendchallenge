@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Embeddable
 public class CardId implements Serializable{
 	
@@ -16,9 +18,10 @@ public class CardId implements Serializable{
 	private String numberCard;
 	
 	@Column(name = "EXPIRATIONDATE", nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date expirationDate;
 	
-	@Column(name = "CVV", nullable = false)
+	@Column(name = "CVV", nullable = false, length = 3)
 	private String cvv;
 	
 	public CardId() {}

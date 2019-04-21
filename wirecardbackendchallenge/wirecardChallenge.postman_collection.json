@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "e132d728-b29e-4c51-b934-5f244aa54bae",
+		"name": "wirecardChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "List Clients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cpf\" : \"91099021049\",\n\t\"name\" : \"Joao Pé de Feijão\",\n\t\"autor\" : \"Emilio Dias\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"client"
+							]
+						},
+						"description": "View all customers registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Client Number One\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"client"
+							]
+						},
+						"description": "Register a new client on the system."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Client.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fe554aad-ada6-4b15-a251-d4534358aa01",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0918e8b4-58d1-4c98-9747-1baf9c5fe96c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Buy",
+			"item": [
+				{
+					"name": "List Buy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buy"
+							]
+						},
+						"description": "View all buys registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Buy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"payments\" : [{\t\"id\" : \"33\"\t}],\n\t\"client\" : {\n\t\t\"id\" : \"65\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buy"
+							]
+						},
+						"description": "Register a new buy on the system."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Buy."
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "List Cards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/card",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card"
+							]
+						},
+						"description": "View all cards registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cardId\" : {\n\t\t\"holderName\" : \"CLIENT N ONE\",\n\t\t\"numberCard\" : \"5501107883854545\", \n\t\t\"expirationDate\" : \"2020-06-21 20:59:59\", \n\t\t\"cvv\" : \"981\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/card",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card"
+							]
+						},
+						"description": "Register a new card on the system."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Card."
+		},
+		{
+			"name": "Buyer",
+			"item": [
+				{
+					"name": "List Buyers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/buyer",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buyer"
+							]
+						},
+						"description": "View all buyers registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Buyer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cpf\" : \"47754396009\",\n\t\"name\" : \"Buyer Number One\", \n\t\"email\" : \"buyernumberone@email.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/buyer",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buyer"
+							]
+						},
+						"description": "Register a new buyer on the system."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Buyer.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ace4369-7da9-49d1-a40a-039acff61b81",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0a78b8fe-ec01-4102-84bc-f7b0c4e4982e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "List Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "View all payments registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Payment - Credit Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : \"25.00\",\n\t\"type\" : \"CREDIT_CARD\", \n\t\"card\" : {\n\t\t\"cardId\" : {\n\t\t\t\"holderName\" : \"CLIENT N ONE\",\n\t\t\t\"numberCard\" : \"5501107883854545\", \n\t\t\t\"expirationDate\" : \"2020-06-21 20:59:59\", \n\t\t\t\"cvv\" : \"981\"\n\t\t}\n\t},\n\t\"cardPaymentSuccessful\" : \"TRUE\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "Register a new payment of type Credit Card on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Payment - Boleto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : \"350.00\",\n\t\"type\" : \"BOLETO\",\n\t\"boletoNumber\" : \"23790504004199042023806008109206578680000035000\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "Register a new payment of type Boleto on the system."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Payment."
+		}
+	]
+}

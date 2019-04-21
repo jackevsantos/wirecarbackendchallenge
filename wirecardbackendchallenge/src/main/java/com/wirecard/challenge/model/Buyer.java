@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 @Entity
 public class Buyer {
 	
@@ -15,7 +18,10 @@ public class Buyer {
 	private String name;
 	
 	@Column(name = "EMAIL")
+	@JsonInclude(Include.NON_NULL)
 	private String email;
+	
+	public Buyer() {}
 	
 	public String getName() {
 		return name;
