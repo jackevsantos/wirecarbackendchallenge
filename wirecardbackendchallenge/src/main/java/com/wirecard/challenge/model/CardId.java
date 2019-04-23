@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Embeddable
 public class CardId implements Serializable{
 	
+	private static final long serialVersionUID = 7929087643220053323L;
+
 	@Column(name = "HOLDERNAME", nullable = false)
 	private String holderName;
 	

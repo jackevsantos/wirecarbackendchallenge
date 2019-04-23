@@ -21,14 +21,14 @@ public class Buy {
 	private Long id;
 	
 	@OneToOne
-	@JoinColumn(name = "BUYER")
+	@JoinColumn(name = "BUYER", nullable = false)
 	private Buyer buyer;
 	
-	@OneToMany(cascade=CascadeType.MERGE, mappedBy="buy")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="buy")
 	private List<Payment> payments;
 	
 	@OneToOne
-	@JoinColumn(name = "CLIENT")
+	@JoinColumn(name = "CLIENT", nullable = false)
 	private Client client;
 	
 	public Buy() {}

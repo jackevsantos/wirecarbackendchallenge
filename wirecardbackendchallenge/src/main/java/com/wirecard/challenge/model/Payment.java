@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,9 +16,11 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.wirecard.challenge.util.TypePayment;
+
 
 @Entity
 public class Payment {
@@ -28,8 +32,9 @@ public class Payment {
 	@Column(name = "AMOUNT", nullable = false)
 	private BigDecimal amount;
 	
-	@Column(name = "TYPE", nullable = false)
-	private String type;
+	@Enumerated(EnumType.STRING)
+	@Column(name = "TYPEPAYMENT", nullable = false)
+	private TypePayment typePayment;
 	
 	@OneToOne(cascade = {CascadeType.MERGE})
 	@JoinColumns({
@@ -50,8 +55,7 @@ public class Payment {
 	private Boolean cardPaymentSuccessful;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "BUYID")
-	@JsonInclude(Include.NON_NULL)
+	@JsonIgnore
 	private Buy buy;
 	
 	public Payment() { }
@@ -72,14 +76,22 @@ public class Payment {
 		this.amount = amount;
 	}
 	
-	public String getType() {
-		return type;
+	public TypePayment getTypePayment() {
+		return typePayment;
 	}
-	
-	public void setType(TypePayment typePayment) {
-		this.type = typePayment.getDescription();
+
+	public void setTypePayment(TypePayment typePayment) {
+		this.typePayment = typePayment;
 	}
-	
+
+	public Boolean getCardPaymentSuccessful() {
+		return cardPaymentSuccessful;
+	}
+
+	public void setCardPaymentSuccessful(Boolean cardPaymentSuccessful) {
+		this.cardPaymentSuccessful = cardPaymentSuccessful;
+	}
+
 	public Card getCard() {
 		return card;
 	}
@@ -94,14 +106,6 @@ public class Payment {
 	
 	public void setBoletoNumber(String boletoNumber) {
 		this.boletoNumber = boletoNumber;
-	}
-	
-	public Boolean getCardPaymentSucessful() {
-		return cardPaymentSuccessful;
-	}
-	
-	public void setCardPaymentSucessful(Boolean cardPaymentSucessful) {
-		this.cardPaymentSuccessful = cardPaymentSucessful;
 	}
 	
 	public Buy getBuy() {
