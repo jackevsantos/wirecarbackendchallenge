@@ -19,6 +19,8 @@ import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.wirecard.challenge.util.StatusPaymentBoleto;
+import com.wirecard.challenge.util.StatusPaymentCard;
 import com.wirecard.challenge.util.TypePayment;
 
 
@@ -57,6 +59,16 @@ public class Payment {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnore
 	private Buy buy;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "STATUSPAYMENTBOLETO")
+	@JsonInclude(Include.NON_NULL)
+	private StatusPaymentBoleto statusPaymentBoleto;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "STATUSPAYMENTCARD")
+	@JsonInclude(Include.NON_NULL)
+	private StatusPaymentCard statusPaymentCard;
 	
 	public Payment() { }
 	
@@ -124,4 +136,21 @@ public class Payment {
 	public void setBuy(Buy buy) {
 		this.buy = buy;
 	}
+
+	public StatusPaymentBoleto getStatusPaymentBoleto() {
+		return statusPaymentBoleto;
+	}
+
+	public void setStatusPaymentBoleto(StatusPaymentBoleto statusPaymentBoleto) {
+		this.statusPaymentBoleto = statusPaymentBoleto;
+	}
+
+	public StatusPaymentCard getStatusPaymentCard() {
+		return statusPaymentCard;
+	}
+
+	public void setStatusPaymentCard(StatusPaymentCard statusPaymentCard) {
+		this.statusPaymentCard = statusPaymentCard;
+	}
+	
 }

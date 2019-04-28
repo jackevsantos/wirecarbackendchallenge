@@ -698,7 +698,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"amount\" : \"25.00\",\n\t\"typePayment\" : \"CREDIT_CARD\", \n\t\"card\" : {\n\t\t\"cardId\": {\n\t\t    \"holderName\": \"CLIENT N ONE\",\n\t\t    \"numberCard\": \"5501107883854545\",\n\t\t    \"expirationDate\": \"2020-06-21 23:59:59\",\n\t\t    \"cvv\": \"981\"\n\t\t}\n\t},\n\t\"cardPaymentSuccessful\" : \"true\",\n\t\"buy\" : \"33\"\n}"
+							"raw": "{\n\t\"amount\" : \"25.00\",\n\t\"typePayment\" : \"CREDIT_CARD\", \n\t\"card\" : {\n\t\t\"cardId\": {\n\t\t    \"holderName\": \"CLIENT N ONE\",\n\t\t    \"numberCard\": \"6666666\",\n\t\t    \"expirationDate\": \"2020-06-21 23:59:59\",\n\t\t    \"cvv\": \"981\"\n\t\t}\n\t},\n\t\"cardPaymentSuccessful\" : \"true\",\n\t\"buy\" : \"3\",\n\t\"statusPaymentCard\" : \"AUTHORIZED\"\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/api/payment",
@@ -729,7 +729,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"amount\" : \"350.00\",\n\t\"typePayment\" : \"BOLETO\",\n\t\"boletoNumber\" : \"23790504004199042023806008109206578680000035000\",\n\t\"buy\" : \"33\"\n}"
+							"raw": "{\n\t\"amount\" : \"350.00\",\n\t\"typePayment\" : \"BOLETO\",\n\t\"boletoNumber\" : \"23790504004199042023806008109206578680000035000\",\n\t\"statusPaymentBoleto\" : \"AWAITING_PAYMENT\"\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/api/payment",
@@ -785,7 +785,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"amount\": 705.00,\n    \"typePayment\": \"BOLETO\",\n    \"boletoNumber\": \"23790504004199042023806008109206578680000035000\",\n    \"cardPaymentSucessful\": null\n}"
+							"raw": "{\n    \"amount\": 705.00,\n    \"typePayment\": \"BOLETO\",\n    \"boletoNumber\": \"23790504004199042023806008109206578680000035000\",\n    \"cardPaymentSucessful\": null,\n    \"statusPaymentBoleto\" : \"PAID\"\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/api/payment/id=38",

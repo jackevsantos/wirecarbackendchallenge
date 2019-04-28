@@ -54,4 +54,5 @@ public class PaymentController {
 		paymentServices.toDelete(id);
 		return ResponseEntity.noContent().build();
 	}
+	
 }
