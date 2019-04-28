@@ -24,7 +24,6 @@ public class BuyController {
 	@Autowired
 	private BuyServices buyServices; 
 	
-
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Buy>> toList() {
 		return ResponseEntity.status(HttpStatus.OK).body(buyServices.toList());

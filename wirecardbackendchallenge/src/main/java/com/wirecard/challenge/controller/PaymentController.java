@@ -45,7 +45,7 @@ public class PaymentController {
 	@RequestMapping(value = "/id={id}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> toUpdate(@RequestBody Payment payment, @PathVariable("id") Long id) {
 		payment.setId(id);
-		paymentServices.toSave(payment);
+		paymentServices.toUpdate(payment);
 		return ResponseEntity.noContent().build();
 	}
 	

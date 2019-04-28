@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Buy {
 	
@@ -25,6 +27,7 @@ public class Buy {
 	private Buyer buyer;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="buy")
+	@JsonIgnore
 	private List<Payment> payments;
 	
 	@OneToOne
@@ -32,6 +35,11 @@ public class Buy {
 	private Client client;
 	
 	public Buy() {}
+	
+	public Buy(Buyer buyer, Client client) {
+		this.buyer = buyer;
+		this.client = client;
+	}
 	
 	public Long getId() {
 		return id;

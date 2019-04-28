@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import com.wirecard.challenge.model.ErrorDetails;
 import com.wirecard.challenge.services.exceptions.BuyNotFoundException;
@@ -86,9 +86,8 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDetails);
 	}
 	
-	
-	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
-	public ResponseEntity<ErrorDetails> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException methodArgumentTypeMismatchException, HttpServletRequest request){
+	@ExceptionHandler(JpaObjectRetrievalFailureException.class)
+	public ResponseEntity<ErrorDetails> handleJpaObjectRetrievalFailureException(JpaObjectRetrievalFailureException jpaObjectRetrievalFailureException, HttpServletRequest request){
 		
 		ErrorDetails errorDetails = new ErrorDetails();
 		errorDetails.setStatus(400l);

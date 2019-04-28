@@ -11,6 +11,10 @@ public class Card {
 	
 	public Card() {	}
 	
+	public Card(CardId cardId) {
+		this.cardId = cardId;
+	}
+	
 	public CardId getCardId() {
 		return cardId;
 	}
@@ -18,6 +22,5 @@ public class Card {
 	public void setCardId(CardId cardId) {
 		this.cardId = cardId;
 	}
-	
 	
 }

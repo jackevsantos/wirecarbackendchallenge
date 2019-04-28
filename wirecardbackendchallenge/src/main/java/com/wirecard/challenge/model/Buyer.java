@@ -23,6 +23,12 @@ public class Buyer {
 	
 	public Buyer() {}
 	
+	public Buyer(String cpf, String name, String email) {
+		this.cpf = cpf;
+		this.name = name;
+		this.email = email;
+	}
+	
 	public String getName() {
 		return name;
 	}

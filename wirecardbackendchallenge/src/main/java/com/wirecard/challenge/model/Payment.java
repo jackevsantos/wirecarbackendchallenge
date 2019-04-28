@@ -60,6 +60,15 @@ public class Payment {
 	
 	public Payment() { }
 	
+	public Payment(BigDecimal amount, TypePayment typePayment, Card card, String boletoNumber, Boolean cardPaymentSuccessful, Buy buy) { 
+		this.amount = amount;
+		this.typePayment = typePayment;
+		this.card = card;
+		this.boletoNumber = boletoNumber;
+		this.cardPaymentSuccessful = cardPaymentSuccessful;
+		this.buy = buy;
+	}
+	
 	public Long getId() {
 		return id;
 	}

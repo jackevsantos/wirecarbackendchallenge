@@ -45,7 +45,7 @@ public class BuyerController {
 	@RequestMapping(value = "/cpf={cpf}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> toUpdate(@RequestBody Buyer buyer, @PathVariable("cpf") String cpf) {
 		buyer.setCpf(cpf);
-		buyerservices.toSave(buyer);
+		buyerservices.toUpdate(buyer);
 		return ResponseEntity.noContent().build();
 	}
 	

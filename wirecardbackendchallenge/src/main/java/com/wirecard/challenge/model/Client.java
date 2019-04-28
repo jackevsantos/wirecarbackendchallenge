@@ -18,6 +18,10 @@ public class Client {
 	
 	public Client() { }
 	
+	public Client(String name) {
+		this.name = name;
+	}
+	
 	public Long getId() {
 		return id;
 	}

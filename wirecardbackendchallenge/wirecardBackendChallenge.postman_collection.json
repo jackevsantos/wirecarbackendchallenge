@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "22b3f470-cd11-4ded-be5f-675a24c993a8",
+		"_postman_id": "12507ce7-1bdd-4cc1-9d5f-b5b81256499e",
 		"name": "wirecardBackendChallenge",
 		"description": "API - Wirecard Backend Challenge.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -84,7 +84,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:8080/api/client/id=97",
+							"raw": "localhost:8080/api/client/id=1",
 							"host": [
 								"localhost"
 							],
@@ -92,7 +92,7 @@
 							"path": [
 								"api",
 								"client",
-								"id=97"
+								"id=1"
 							]
 						},
 						"description": "View an especific customer registered in the system by Id."
@@ -141,7 +141,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:8080/api/client/id=97",
+							"raw": "localhost:8080/api/client/id=1",
 							"host": [
 								"localhost"
 							],
@@ -149,7 +149,7 @@
 							"path": [
 								"api",
 								"client",
-								"id=97"
+								"id=1"
 							]
 						},
 						"description": "Delete a specific client that is registered to the system by Id."
@@ -173,513 +173,6 @@
 					"listen": "test",
 					"script": {
 						"id": "0918e8b4-58d1-4c98-9747-1baf9c5fe96c",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Payment",
-			"item": [
-				{
-					"name": "List Payments",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment"
-							]
-						},
-						"description": "View all payments registered in the system."
-					},
-					"response": []
-				},
-				{
-					"name": "New Payment - Credit Card",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"amount\" : \"25.00\",\n\t\"type\" : \"CREDIT_CARD\", \n\t\"card\" : {\n\t\t\"cardId\": {\n\t\t    \"holderName\": \"CLIENT N ONE\",\n\t\t    \"numberCard\": \"6666666\",\n\t\t    \"expirationDate\": \"2020-06-21 23:59:59\",\n\t\t    \"cvv\": \"981\"\n\t\t}\n\t},\n\t\"cardPaymentSuccessful\" : \"true\",\n\t\"buy\" : \"3\"\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment"
-							]
-						},
-						"description": "Register a new payment of type Credit Card on the system."
-					},
-					"response": []
-				},
-				{
-					"name": "New Payment - Boleto",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"amount\" : \"350.00\",\n\t\"type\" : \"BOLETO\",\n\t\"boletoNumber\" : \"23790504004199042023806008109206578680000035000\"\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment"
-							]
-						},
-						"description": "Register a new payment of type Boleto on the system."
-					},
-					"response": []
-				},
-				{
-					"name": "Get Payment By Id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment/id=67",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment",
-								"id=67"
-							]
-						},
-						"description": "View an Payment customer registered in the system by Id."
-					},
-					"response": []
-				},
-				{
-					"name": "Update Payment",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": 67,\n    \"amount\": 700.00,\n    \"type\": \"BOLETO\",\n    \"boletoNumber\": \"23790504004199042023806008109206578680000035000\",\n    \"cardPaymentSucessful\": null\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment/id=67",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment",
-								"id=67"
-							]
-						},
-						"description": "Update a specific payment that is registered to the system by Id."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Payment",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment/id=67",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment",
-								"id=67"
-							]
-						},
-						"description": "Delete a specific payment that is registered to the system by Id."
-					},
-					"response": []
-				}
-			],
-			"description": "This folder represents an object of type Payment.",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "69f29456-1f45-4a8d-a739-a043b5ea01d2",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "53a74ac4-c843-46af-ba79-f2cdc3da2997",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Card",
-			"item": [
-				{
-					"name": "List Cards",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/card",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card"
-							]
-						},
-						"description": "View all cards registered in the system."
-					},
-					"response": []
-				},
-				{
-					"name": "New Card",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"cardId\" : {\n\t\t\"holderName\" : \"CLIENT N ONE\",\n\t\t\"numberCard\" : \"5501107883854545\", \n\t\t\"expirationDate\" : \"2020-06-21 23:59:59\", \n\t\t\"cvv\" : \"981\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/card",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card"
-							]
-						},
-						"description": "Register a new card on the system."
-					},
-					"response": []
-				},
-				{
-					"name": "Get Card By Id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5501107883854545/expirationDate=2020-06-21 20:59:59/cvv=981",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card",
-								"holderName=CLIENT N ONE",
-								"numberCard=5501107883854545",
-								"expirationDate=2020-06-21 20:59:59",
-								"cvv=981"
-							]
-						},
-						"description": "View an especific card registered in the system by Id."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Card",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5501107883854545/expirationDate=2020-06-21 20:59:59/cvv=981",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card",
-								"holderName=CLIENT N ONE",
-								"numberCard=5501107883854545",
-								"expirationDate=2020-06-21 20:59:59",
-								"cvv=981"
-							]
-						},
-						"description": "Delete a specific card that is registered to the system by Id."
-					},
-					"response": []
-				}
-			],
-			"description": "This folder represents an object of type Card.",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "6429bda7-194c-4590-81f9-04b7d5cdf5e6",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "8ad11609-fab4-4f8d-8977-f13d1757ce08",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Buy",
-			"item": [
-				{
-					"name": "List Buy",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/buy",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"buy"
-							]
-						},
-						"description": "View all buys registered in the system."
-					},
-					"response": []
-				},
-				{
-					"name": "New Buy",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"1\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/buy",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"buy"
-							]
-						},
-						"description": "Register a new buy on the system."
-					},
-					"response": []
-				},
-				{
-					"name": "Get Buy By Id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/buy/id=6",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"buy",
-								"id=6"
-							]
-						},
-						"description": "View an especific buy registered in the system by CPF."
-					},
-					"response": []
-				},
-				{
-					"name": "Update Buy",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"65\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/buy/id=9",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"buy",
-								"id=9"
-							]
-						},
-						"description": "Update a specific buy that is registered to the system by Id."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Buy",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/buy/id=656",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"buy",
-								"id=656"
-							]
-						},
-						"description": "Delete a specific buy that is registered to the system by Id."
-					},
-					"response": []
-				}
-			],
-			"description": "This folder represents an object of type Buy.",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "b3cfc80d-5f2b-4fa9-9526-e987368fc07d",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "7ee0b316-5920-4dc5-b470-b71634af949f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -845,6 +338,513 @@
 					"listen": "test",
 					"script": {
 						"id": "0a78b8fe-ec01-4102-84bc-f7b0c4e4982e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Buy",
+			"item": [
+				{
+					"name": "List Buy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buy"
+							]
+						},
+						"description": "View all buys registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Buy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"2\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buy"
+							]
+						},
+						"description": "Register a new buy on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Buy By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/buy/id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buy",
+								"id=1"
+							]
+						},
+						"description": "View an especific buy registered in the system by CPF."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Buy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"2\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/buy/id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buy",
+								"id=1"
+							]
+						},
+						"description": "Update a specific buy that is registered to the system by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Buy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/buy/id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buy",
+								"id=1"
+							]
+						},
+						"description": "Delete a specific buy that is registered to the system by Id."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Buy.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b3cfc80d-5f2b-4fa9-9526-e987368fc07d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ee0b316-5920-4dc5-b470-b71634af949f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "List Cards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/card",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card"
+							]
+						},
+						"description": "View all cards registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cardId\" : {\n\t\t\"holderName\" : \"CLIENT N ONE\",\n\t\t\"numberCard\" : \"5501107883854545\", \n\t\t\"expirationDate\" : \"2020-06-21 23:59:59\", \n\t\t\"cvv\" : \"981\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/card",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card"
+							]
+						},
+						"description": "Register a new card on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Card By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5501107883854545/expirationDate=2020-06-21 20:59:59/cvv=981",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card",
+								"holderName=CLIENT N ONE",
+								"numberCard=5501107883854545",
+								"expirationDate=2020-06-21 20:59:59",
+								"cvv=981"
+							]
+						},
+						"description": "View an especific card registered in the system by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Card",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5501107883854545/expirationDate=2020-06-21 20:59:59/cvv=981",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card",
+								"holderName=CLIENT N ONE",
+								"numberCard=5501107883854545",
+								"expirationDate=2020-06-21 20:59:59",
+								"cvv=981"
+							]
+						},
+						"description": "Delete a specific card that is registered to the system by Id."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Card.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6429bda7-194c-4590-81f9-04b7d5cdf5e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ad11609-fab4-4f8d-8977-f13d1757ce08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "List Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "View all payments registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Payment - Credit Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : \"25.00\",\n\t\"typePayment\" : \"CREDIT_CARD\", \n\t\"card\" : {\n\t\t\"cardId\": {\n\t\t    \"holderName\": \"CLIENT N ONE\",\n\t\t    \"numberCard\": \"5501107883854545\",\n\t\t    \"expirationDate\": \"2020-06-21 23:59:59\",\n\t\t    \"cvv\": \"981\"\n\t\t}\n\t},\n\t\"cardPaymentSuccessful\" : \"true\",\n\t\"buy\" : \"33\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "Register a new payment of type Credit Card on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Payment - Boleto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : \"350.00\",\n\t\"typePayment\" : \"BOLETO\",\n\t\"boletoNumber\" : \"23790504004199042023806008109206578680000035000\",\n\t\"buy\" : \"33\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "Register a new payment of type Boleto on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment/id=67",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment",
+								"id=67"
+							]
+						},
+						"description": "View an Payment customer registered in the system by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 705.00,\n    \"typePayment\": \"BOLETO\",\n    \"boletoNumber\": \"23790504004199042023806008109206578680000035000\",\n    \"cardPaymentSucessful\": null\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment/id=38",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment",
+								"id=38"
+							]
+						},
+						"description": "Update a specific payment that is registered to the system by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment/id=67",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment",
+								"id=67"
+							]
+						},
+						"description": "Delete a specific payment that is registered to the system by Id."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Payment.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "69f29456-1f45-4a8d-a739-a043b5ea01d2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "53a74ac4-c843-46af-ba79-f2cdc3da2997",
 						"type": "text/javascript",
 						"exec": [
 							""

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wirecard.challenge</groupId>
-	<artifactId>socialbooks</artifactId>
+	<artifactId>wirecardbackendchallenge</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>wirecardbackendchallenge</name>
 	<description>API - Desafio Backend Wirecard</description>
