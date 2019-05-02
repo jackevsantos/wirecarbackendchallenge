@@ -16,7 +16,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	protected void createConfiguration(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeRequests()
-//			.antMatchers("/h2-console/**").permitAll()
+			.antMatchers("/h2-console/**").permitAll()
 			.anyRequest().authenticated()
 			.and().httpBasic()
 			.and().csrf().disable();

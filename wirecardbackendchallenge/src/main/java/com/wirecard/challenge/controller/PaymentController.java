@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,7 @@ public class PaymentController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> toSave(@RequestBody Payment payment) { 
+	public ResponseEntity<Void> toSave(@Valid @RequestBody Payment payment) { 
 		payment = paymentServices.toSave(payment);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id={id}").buildAndExpand(payment.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -43,7 +45,7 @@ public class PaymentController {
 	}
 	
 	@RequestMapping(value = "/id={id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> toUpdate(@RequestBody Payment payment, @PathVariable("id") Long id) {
+	public ResponseEntity<Void> toUpdate(@Valid @RequestBody Payment payment, @PathVariable("id") Long id) {
 		payment.setId(id);
 		paymentServices.toUpdate(payment);
 		return ResponseEntity.noContent().build();

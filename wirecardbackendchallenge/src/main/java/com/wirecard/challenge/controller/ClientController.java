@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,7 @@ public class ClientController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> toSave(@RequestBody Client client) { 
+	public ResponseEntity<Void> toSave(@Valid @RequestBody Client client) { 
 		client = clientServices.toSave(client);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id={id}").buildAndExpand(client.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -43,7 +45,7 @@ public class ClientController {
 	}
 	
 	@RequestMapping(value = "/id={id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> toUpdate(@RequestBody Client client, @PathVariable("id") Long id) {
+	public ResponseEntity<Void> toUpdate(@Valid @RequestBody Client client, @PathVariable("id") Long id) {
 		client.setId(id);
 		clientServices.toUpdate(client);
 		return ResponseEntity.noContent().build();

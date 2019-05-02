@@ -14,6 +14,9 @@ import com.wirecard.challenge.services.exceptions.BuyNotFoundException;
 import com.wirecard.challenge.services.exceptions.BuyerNotFoundException;
 import com.wirecard.challenge.services.exceptions.CardNotFoundException;
 import com.wirecard.challenge.services.exceptions.ClientNotFoundException;
+import com.wirecard.challenge.services.exceptions.ExistingBuyerException;
+import com.wirecard.challenge.services.exceptions.ExistingCardException;
+import com.wirecard.challenge.services.exceptions.NumberCardInvalidException;
 import com.wirecard.challenge.services.exceptions.PaymentNotFoundException;
 
 @ControllerAdvice
@@ -82,6 +85,7 @@ public class ResourceExceptionHandler {
 		errorDetails.setStatus(400l);
 		errorDetails.setTitle("Invalid Request! You must modify the request to try again.");
 		errorDetails.setTimestamp(System.currentTimeMillis());
+		errorDetails.setCause(dataIntegrityViolationException.getCause().getCause().toString());
 		
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDetails);
 	}
@@ -91,10 +95,46 @@ public class ResourceExceptionHandler {
 		
 		ErrorDetails errorDetails = new ErrorDetails();
 		errorDetails.setStatus(400l);
-		errorDetails.setTitle("Invalid Request! You must modify the request to try again.");
+		errorDetails.setTitle("Invalid Request! You must modify the request to try again." + jpaObjectRetrievalFailureException.getCause().getCause());
 		errorDetails.setTimestamp(System.currentTimeMillis());
+		errorDetails.setCause(jpaObjectRetrievalFailureException.getCause().getCause().toString());
 		
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDetails);
 	}
 	
+	@ExceptionHandler(ExistingCardException.class)
+	public ResponseEntity<ErrorDetails> handleExistingCardException(ExistingCardException existingCardException, HttpServletRequest request){
+		
+		ErrorDetails errorDetails = new ErrorDetails();
+		errorDetails.setStatus(400l);
+		errorDetails.setTitle("This card has already been registered!");
+		errorDetails.setTimestamp(System.currentTimeMillis());
+		errorDetails.setCause("A card with these identifiers already exists.");
+		
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDetails);
+	}
+	
+	@ExceptionHandler(ExistingBuyerException.class)
+	public ResponseEntity<ErrorDetails> handleExistingBuyerException(ExistingBuyerException existingBuyerException, HttpServletRequest request){
+		
+		ErrorDetails errorDetails = new ErrorDetails();
+		errorDetails.setStatus(400l);
+		errorDetails.setTitle("This buyer has already been registered!");
+		errorDetails.setTimestamp(System.currentTimeMillis());
+		errorDetails.setCause("There is already a registered buyer with this CPF.");
+		
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDetails);
+	}
+	
+	@ExceptionHandler(NumberCardInvalidException.class)
+	public ResponseEntity<ErrorDetails> numberCardInvalidException(NumberCardInvalidException numberCardInvalidException, HttpServletRequest request){
+		
+		ErrorDetails errorDetails = new ErrorDetails();
+		errorDetails.setStatus(400l);
+		errorDetails.setTitle("Card Invalid!");
+		errorDetails.setTimestamp(System.currentTimeMillis());
+		errorDetails.setCause("Invalid card number, please check and try again.");
+		
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDetails);
+	}
 }

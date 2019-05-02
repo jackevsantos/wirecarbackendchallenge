@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -14,16 +15,20 @@ public class CardId implements Serializable{
 	private static final long serialVersionUID = 7929087643220053323L;
 
 	@Column(name = "HOLDERNAME", nullable = false)
+	@NotNull(message = "You need to inform a holder name.")
 	private String holderName;
 	
 	@Column(name = "NUMBERCARD", nullable = false)
+	@NotNull(message = "You need to inform a number card.")
 	private String numberCard;
 	
 	@Column(name = "EXPIRATIONDATE", nullable = false)
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@NotNull(message = "You need to inform a expiration date.")
 	private Date expirationDate;
 	
 	@Column(name = "CVV", nullable = false, length = 3)
+	@NotNull(message = "You need to inform a cvv code.")
 	private String cvv;
 	
 	public CardId() {}

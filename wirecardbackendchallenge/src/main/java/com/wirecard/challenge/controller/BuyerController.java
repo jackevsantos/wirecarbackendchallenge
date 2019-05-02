@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,7 @@ public class BuyerController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> toSave(@RequestBody Buyer buyer) { 
+	public ResponseEntity<Void> toSave(@Valid @RequestBody Buyer buyer) { 
 		buyer = buyerservices.toSave(buyer);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/cpf={cpf}").buildAndExpand(buyer.getCpf()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -43,7 +45,7 @@ public class BuyerController {
 	}
 	
 	@RequestMapping(value = "/cpf={cpf}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> toUpdate(@RequestBody Buyer buyer, @PathVariable("cpf") String cpf) {
+	public ResponseEntity<Void> toUpdate(@Valid @RequestBody Buyer buyer, @PathVariable("cpf") String cpf) {
 		buyer.setCpf(cpf);
 		buyerservices.toUpdate(buyer);
 		return ResponseEntity.noContent().build();

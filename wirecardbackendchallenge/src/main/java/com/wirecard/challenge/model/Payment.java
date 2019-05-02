@@ -7,16 +7,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.wirecard.challenge.util.StatusPaymentBoleto;
@@ -32,10 +30,12 @@ public class Payment {
 	private Long id;
 	
 	@Column(name = "AMOUNT", nullable = false)
+	@NotNull(message = "You need to inform an amount.")
 	private BigDecimal amount;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "TYPEPAYMENT", nullable = false)
+	@NotNull(message = "You need to inform a type of payment.")
 	private TypePayment typePayment;
 	
 	@OneToOne(cascade = {CascadeType.MERGE})
@@ -56,10 +56,6 @@ public class Payment {
 	@JsonInclude(Include.NON_NULL)
 	private Boolean cardPaymentSuccessful;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnore
-	private Buy buy;
-	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "STATUSPAYMENTBOLETO")
 	@JsonInclude(Include.NON_NULL)
@@ -72,13 +68,15 @@ public class Payment {
 	
 	public Payment() { }
 	
-	public Payment(BigDecimal amount, TypePayment typePayment, Card card, String boletoNumber, Boolean cardPaymentSuccessful, Buy buy) { 
+	public Payment(BigDecimal amount, TypePayment typePayment, Card card, String boletoNumber, Boolean cardPaymentSuccessful, 
+			StatusPaymentBoleto statusPaymentBoleto, StatusPaymentCard statusPaymentCard) { 
 		this.amount = amount;
 		this.typePayment = typePayment;
 		this.card = card;
 		this.boletoNumber = boletoNumber;
 		this.cardPaymentSuccessful = cardPaymentSuccessful;
-		this.buy = buy;
+		this.statusPaymentBoleto = statusPaymentBoleto;
+		this.statusPaymentCard = statusPaymentCard;
 	}
 	
 	public Long getId() {
@@ -129,14 +127,6 @@ public class Payment {
 		this.boletoNumber = boletoNumber;
 	}
 	
-	public Buy getBuy() {
-		return buy;
-	}
-	
-	public void setBuy(Buy buy) {
-		this.buy = buy;
-	}
-
 	public StatusPaymentBoleto getStatusPaymentBoleto() {
 		return statusPaymentBoleto;
 	}

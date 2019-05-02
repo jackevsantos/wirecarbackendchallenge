@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "12507ce7-1bdd-4cc1-9d5f-b5b81256499e",
-		"name": "wirecardBackendChallenge",
-		"description": "API - Wirecard Backend Challenge.",
+		"_postman_id": "16bf929a-be27-4539-a2c4-fa826d2abebe",
+		"name": "WirecardBackendChallenge",
+		"description": "These collections were created from the API interactions for the Wirecard Backend Challenge.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -11,6 +11,20 @@
 			"item": [
 				{
 					"name": "List Clients",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1cc8642-f01b-4f28-8f5d-7da05dd3f25d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -60,6 +74,20 @@
 				},
 				{
 					"name": "New Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "28d4a36f-1a82-4742-8600-be9579b8a6b4",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -106,6 +134,20 @@
 				},
 				{
 					"name": "Get Client By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1329813a-2ad4-4056-abf2-2e60188c9584",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -146,6 +188,20 @@
 				},
 				{
 					"name": "Update Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "54e219fb-0fe9-4bd4-b0cf-a124c2b0926c",
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -261,6 +317,20 @@
 			"item": [
 				{
 					"name": "List Buyers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "13b57a74-e7c5-4d6e-9950-0ba1c7548550",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -300,6 +370,20 @@
 				},
 				{
 					"name": "New Buyer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec84f895-ca5c-4952-993d-ffc9debb0eca",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -346,6 +430,20 @@
 				},
 				{
 					"name": "Get Buyer By CPF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "622c4955-6b52-4f90-96da-59c8d1bd73c3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -386,6 +484,20 @@
 				},
 				{
 					"name": "Update Buyer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d2a6e90a-14d8-4c30-b337-3b13b491ea38",
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -497,10 +609,688 @@
 			]
 		},
 		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "List Cards",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "30d02313-66f4-4c0a-8d2f-7b4873454313",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/card",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card"
+							]
+						},
+						"description": "View all cards registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Card",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "784e7112-2f6e-45a8-9f3f-472e8b01482a",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cardId\" : {\n\t\t\"holderName\" : \"CLIENT N ONE\",\n\t\t\"numberCard\" : \"5411437953337124\", \n\t\t\"expirationDate\" : \"2020-06-21 23:59:59\", \n\t\t\"cvv\" : \"981\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/card",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card"
+							]
+						},
+						"description": "Register a new card on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Card By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "27244349-f721-477b-859f-8bfbc6413570",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5411437953337124/expirationDate=2020-06-21 20:59:59/cvv=981",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card",
+								"holderName=CLIENT N ONE",
+								"numberCard=5411437953337124",
+								"expirationDate=2020-06-21 20:59:59",
+								"cvv=981"
+							]
+						},
+						"description": "View an especific card registered in the system by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Card",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5411437953337124/expirationDate=2020-06-21 20:59:59/cvv=981",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card",
+								"holderName=CLIENT N ONE",
+								"numberCard=5411437953337124",
+								"expirationDate=2020-06-21 20:59:59",
+								"cvv=981"
+							]
+						},
+						"description": "Delete a specific card that is registered to the system by Id."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Card.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "59edc1bc-c138-45f9-9e84-b7c4f6bf8851",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "06c02dbf-e6c6-4220-a34d-c2e3beb829be",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "List Payments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1701d9fa-ca30-4782-b4b7-0fe11e6d258c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "View all payments registered in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Card - Payment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "784e7112-2f6e-45a8-9f3f-472e8b01482a",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cardId\" : {\n\t\t\"holderName\" : \"CLIENT N THREE\",\n\t\t\"numberCard\" : \"5422478929459110\", \n\t\t\"expirationDate\" : \"2020-02-01 23:59:59\", \n\t\t\"cvv\" : \"628\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/card",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"card"
+							]
+						},
+						"description": "Register a new card on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Payment - Boleto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc224088-6b4f-4b64-bc52-c18c0efffdbc",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : \"350.00\",\n\t\"boletoNumber\" : \"23790504004199042023806008109206578680000035000\",\n\t\"typePayment\" : \"BOLETO\",\n\t\"statusPaymentBoleto\" : \"AWAITING_PAYMENT\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "Register a new payment of type Boleto on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Payment - Credit Card",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f9bd0006-457b-4528-89c4-942ac7c8a5a5",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : \"25.00\",\n\t\"typePayment\" : \"CREDIT_CARD\", \n\t\"card\" : {\n\t\t\"cardId\" : {\n\t\t\t\"holderName\" : \"CLIENT N THREE\",\n\t\t\t\"numberCard\" : \"5422478929459110\", \n\t\t\t\"expirationDate\" : \"2020-02-01 23:59:59\", \n\t\t\t\"cvv\" : \"628\"\n\t\t}\n    },\n\t\"cardPaymentSuccessful\" : \"true\",\n\t\"buy\" : \"2\",\n\t\"statusPaymentCard\" : \"AUTHORIZED\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "Register a new payment of type Credit Card on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bbb9d850-028e-4420-9fb7-20a31a7cf391",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment/id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment",
+								"id=1"
+							]
+						},
+						"description": "View an Payment customer registered in the system by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fc50c5ca-5247-4c70-a347-ec875c6bbd6d",
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 350.00,\n    \"typePayment\": \"BOLETO\",\n    \"boletoNumber\": \"23790504004199042023806008109206578680000035000\",\n    \"buy\" : \"2\",\n    \"statusPaymentBoleto\" : \"PAID\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment/id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment",
+								"id=1"
+							]
+						},
+						"description": "Update a specific payment that is registered to the system by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/payment/id=67",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payment",
+								"id=67"
+							]
+						},
+						"description": "Delete a specific payment that is registered to the system by Id."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder represents an object of type Payment.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e8290414-5752-42d1-bcb4-45cc2beef333",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "86f50a34-9529-4a35-80c9-ed82f1fefffa",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "Buy",
 			"item": [
 				{
 					"name": "List Buy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79c38c74-8731-45b5-a3ef-e78253bd54bc",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -539,7 +1329,141 @@
 					"response": []
 				},
 				{
+					"name": "New Client - Buy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "28d4a36f-1a82-4742-8600-be9579b8a6b4",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Client Number Two\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"client"
+							]
+						},
+						"description": "Register a new client on the system."
+					},
+					"response": []
+				},
+				{
+					"name": "New Buyer - Buy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec84f895-ca5c-4952-993d-ffc9debb0eca",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cpf\" : \"21480167096\",\n\t\"name\" : \"Buyer Number Two\", \n\t\"email\" : \"buyernumbertwo@email.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/buyer",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buyer"
+							]
+						},
+						"description": "Register a new buyer on the system."
+					},
+					"response": []
+				},
+				{
 					"name": "New Buy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e7288be-9808-4f8e-9a8b-aec3649d30a0",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -567,7 +1491,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"2\"\n\t}\n}"
+							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"21480167096\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"33\"\n\t},\n\t\"payment\" : {\n\t\t\"id\" : 1\n\t}\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/api/buy",
@@ -586,6 +1510,20 @@
 				},
 				{
 					"name": "Get Buy By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cff91569-0245-4ada-89b2-4a6d677d6dce",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -626,6 +1564,20 @@
 				},
 				{
 					"name": "Update Buy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a92cead3-067e-4e0d-9948-a3cecaf23b60",
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -653,7 +1605,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"2\"\n\t}\n}"
+							"raw": "{\n\t\"buyer\" : {\n\t\t\"cpf\" : \"47754396009\"\n\t},\n\t\"client\" : {\n\t\t\"id\" : \"65\"\n\t},\n\t\"payment\" : {\n\t\t\"id\" : 1\n\t}\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/api/buy/id=1",
@@ -717,7 +1669,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "b3cfc80d-5f2b-4fa9-9526-e987368fc07d",
+						"id": "fe7d7050-821f-4c24-b166-b06b82d14543",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -727,499 +1679,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7ee0b316-5920-4dc5-b470-b71634af949f",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Card",
-			"item": [
-				{
-					"name": "List Cards",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/card",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card"
-							]
-						},
-						"description": "View all cards registered in the system."
-					},
-					"response": []
-				},
-				{
-					"name": "New Card",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"cardId\" : {\n\t\t\"holderName\" : \"CLIENT N ONE\",\n\t\t\"numberCard\" : \"5501107883854545\", \n\t\t\"expirationDate\" : \"2020-06-21 23:59:59\", \n\t\t\"cvv\" : \"981\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/card",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card"
-							]
-						},
-						"description": "Register a new card on the system."
-					},
-					"response": []
-				},
-				{
-					"name": "Get Card By Id",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5501107883854545/expirationDate=2020-06-21 20:59:59/cvv=981",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card",
-								"holderName=CLIENT N ONE",
-								"numberCard=5501107883854545",
-								"expirationDate=2020-06-21 20:59:59",
-								"cvv=981"
-							]
-						},
-						"description": "View an especific card registered in the system by Id."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Card",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/card/holderName=CLIENT N ONE/numberCard=5501107883854545/expirationDate=2020-06-21 20:59:59/cvv=981",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"card",
-								"holderName=CLIENT N ONE",
-								"numberCard=5501107883854545",
-								"expirationDate=2020-06-21 20:59:59",
-								"cvv=981"
-							]
-						},
-						"description": "Delete a specific card that is registered to the system by Id."
-					},
-					"response": []
-				}
-			],
-			"description": "This folder represents an object of type Card.",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "6429bda7-194c-4590-81f9-04b7d5cdf5e6",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "8ad11609-fab4-4f8d-8977-f13d1757ce08",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Payment",
-			"item": [
-				{
-					"name": "List Payments",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment"
-							]
-						},
-						"description": "View all payments registered in the system."
-					},
-					"response": []
-				},
-				{
-					"name": "New Payment - Credit Card",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"amount\" : \"25.00\",\n\t\"typePayment\" : \"CREDIT_CARD\", \n\t\"card\" : {\n\t\t\"cardId\": {\n\t\t    \"holderName\": \"CLIENT N ONE\",\n\t\t    \"numberCard\": \"6666666\",\n\t\t    \"expirationDate\": \"2020-06-21 23:59:59\",\n\t\t    \"cvv\": \"981\"\n\t\t}\n\t},\n\t\"cardPaymentSuccessful\" : \"true\",\n\t\"buy\" : \"3\",\n\t\"statusPaymentCard\" : \"AUTHORIZED\"\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment"
-							]
-						},
-						"description": "Register a new payment of type Credit Card on the system."
-					},
-					"response": []
-				},
-				{
-					"name": "New Payment - Boleto",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"amount\" : \"350.00\",\n\t\"typePayment\" : \"BOLETO\",\n\t\"boletoNumber\" : \"23790504004199042023806008109206578680000035000\",\n\t\"statusPaymentBoleto\" : \"AWAITING_PAYMENT\"\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment"
-							]
-						},
-						"description": "Register a new payment of type Boleto on the system."
-					},
-					"response": []
-				},
-				{
-					"name": "Get Payment By Id",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment/id=67",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment",
-								"id=67"
-							]
-						},
-						"description": "View an Payment customer registered in the system by Id."
-					},
-					"response": []
-				},
-				{
-					"name": "Update Payment",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"amount\": 705.00,\n    \"typePayment\": \"BOLETO\",\n    \"boletoNumber\": \"23790504004199042023806008109206578680000035000\",\n    \"cardPaymentSucessful\": null,\n    \"statusPaymentBoleto\" : \"PAID\"\n}"
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment/id=38",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment",
-								"id=38"
-							]
-						},
-						"description": "Update a specific payment that is registered to the system by Id."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Payment",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "testes12",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "wirecardchallenge",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:8080/api/payment/id=67",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"payment",
-								"id=67"
-							]
-						},
-						"description": "Delete a specific payment that is registered to the system by Id."
-					},
-					"response": []
-				}
-			],
-			"description": "This folder represents an object of type Payment.",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "69f29456-1f45-4a8d-a739-a043b5ea01d2",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "53a74ac4-c843-46af-ba79-f2cdc3da2997",
+						"id": "1c5adde0-ac67-4e2a-95a2-12e1ce51b17a",
 						"type": "text/javascript",
 						"exec": [
 							""

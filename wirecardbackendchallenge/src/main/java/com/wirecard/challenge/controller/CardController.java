@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -34,7 +36,7 @@ public class CardController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> toSave(@RequestBody Card card) { 
+	public ResponseEntity<Void> toSave(@Valid @RequestBody Card card) { 
 		card = cardServices.toSave(card);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/holderName={holderName}/numberCard={numberCard}/expirationDate={expirationDate}/cvv={cvv}")
 					.buildAndExpand(card.getCardId().getHolderName(), card.getCardId().getNumberCard(), card.getCardId().getExpirationDate(), card.getCardId().getClass()).toUri();
@@ -60,6 +62,5 @@ public class CardController {
 		cardServices.toDelete(new CardId(holderName, numberCard, expirationDate, cvv));
 		return ResponseEntity.noContent().build();
 	}
-	
 	
 }

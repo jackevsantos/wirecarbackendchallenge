@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,7 @@ public class BuyController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> toSave(@RequestBody Buy buy) { 
+	public ResponseEntity<Void> toSave(@Valid @RequestBody Buy buy) { 
 		buy = buyServices.toSave(buy);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id={id}").buildAndExpand(buy.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -43,7 +45,7 @@ public class BuyController {
 	}
 	
 	@RequestMapping(value = "/id={id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> toUpdate(@RequestBody Buy buy, @PathVariable("id") Long id) {
+	public ResponseEntity<Void> toUpdate(@Valid @RequestBody Buy buy, @PathVariable("id") Long id) {
 		buy.setId(id);
 		buyServices.toUpdate(buy);
 		return ResponseEntity.noContent().build();

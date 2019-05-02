@@ -1,18 +1,13 @@
 package com.wirecard.challenge.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Buy {
@@ -24,21 +19,25 @@ public class Buy {
 	
 	@OneToOne
 	@JoinColumn(name = "BUYER", nullable = false)
+	@NotNull(message = "You need to inform a buyer.")
 	private Buyer buyer;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="buy")
-	@JsonIgnore
-	private List<Payment> payments;
+	@OneToOne
+	@JoinColumn(name = "PAYMENT", nullable = false)
+	@NotNull(message = "You payment to inform a buyer.")
+	private Payment payment;
 	
 	@OneToOne
 	@JoinColumn(name = "CLIENT", nullable = false)
+	@NotNull(message = "You need to inform a client.")
 	private Client client;
 	
 	public Buy() {}
 	
-	public Buy(Buyer buyer, Client client) {
+	public Buy(Buyer buyer, Client client, Payment payment) {
 		this.buyer = buyer;
 		this.client = client;
+		this.payment = payment;
 	}
 	
 	public Long getId() {
@@ -55,12 +54,15 @@ public class Buy {
 	public void setBuyer(Buyer buyer) {
 		this.buyer = buyer;
 	}
-	public List<Payment> getPayments() {
-		return payments;
+	
+	public Payment getPayment() {
+		return payment;
 	}
-	public void setPayments(List<Payment> payments) {
-		this.payments = payments;
+
+	public void setPayment(Payment payment) {
+		this.payment = payment;
 	}
+
 	public Client getClient() {
 		return client;
 	}

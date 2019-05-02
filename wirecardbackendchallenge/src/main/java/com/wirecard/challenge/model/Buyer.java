@@ -3,6 +3,7 @@ package com.wirecard.challenge.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -15,6 +16,7 @@ public class Buyer {
 	private String cpf;
 	
 	@Column(name = "NAME", nullable = false)
+	@NotEmpty(message = "You need to inform a name.")
 	private String name;
 	
 	@Column(name = "EMAIL")
