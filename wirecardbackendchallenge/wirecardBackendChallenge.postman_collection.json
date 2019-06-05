@@ -15,6 +15,21 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -46,6 +61,21 @@
 				{
 					"name": "New Client",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -77,6 +107,21 @@
 				{
 					"name": "Get Client By Id",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -102,6 +147,21 @@
 				{
 					"name": "Update Client",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -134,6 +194,21 @@
 				{
 					"name": "Delete Client",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -187,6 +262,21 @@
 				{
 					"name": "List Buyers",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -211,6 +301,21 @@
 				{
 					"name": "New Buyer",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -242,6 +347,21 @@
 				{
 					"name": "Get Buyer By CPF",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -267,6 +387,21 @@
 				{
 					"name": "Update Buyer",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -299,6 +434,21 @@
 				{
 					"name": "Delete Buyer",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -352,6 +502,21 @@
 				{
 					"name": "List Buy",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -376,6 +541,21 @@
 				{
 					"name": "New Buy",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -407,6 +587,21 @@
 				{
 					"name": "Get Buy By Id",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -432,6 +627,21 @@
 				{
 					"name": "Update Buy",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -464,6 +674,21 @@
 				{
 					"name": "Delete Buy",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -517,6 +742,21 @@
 				{
 					"name": "List Cards",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -541,6 +781,21 @@
 				{
 					"name": "New Card",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -572,6 +827,21 @@
 				{
 					"name": "Get Card By Id",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -600,6 +870,21 @@
 				{
 					"name": "Delete Card",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
@@ -663,6 +948,21 @@
 				{
 					"name": "List Payments",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -687,6 +987,21 @@
 				{
 					"name": "New Payment - Credit Card",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -718,6 +1033,21 @@
 				{
 					"name": "New Payment - Boleto",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -749,6 +1079,21 @@
 				{
 					"name": "Get Payment By Id",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -774,6 +1119,21 @@
 				{
 					"name": "Update Payment",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -806,6 +1166,21 @@
 				{
 					"name": "Delete Payment",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testes12",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wirecardchallenge",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
